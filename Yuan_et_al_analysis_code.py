@@ -36,7 +36,7 @@ before=60       #time window for spike waveform detection before (6 ms) and afte
 after=80
 total=int(before+after)
 
-target_dir="/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200715_#423_re"
+target_dir="/data/example_raw_for_position_extraction_spike_waveform/200715_#423_re"
 os.chdir(target_dir)
 firings=mio.readmda('firings.curated.mda')
 firings=N.transpose(firings)
@@ -129,7 +129,7 @@ def display_unit_kinetics_mountainlab_for_batch(su_id,firings,raw,Fs=30000,filte
 ### function for bursting index for all units on one shank
 def burst_index_all_batch(Fs=30000,binwidth=1,maxlag=300,saveData=False,plotData=False,saveFig=False):
 
-    target_dir="/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/output/ms3--all_shank2"
+    target_dir="/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/output/ms3--all_shank2"
     os.chdir(target_dir)
     su_batch=op.open_helper('all_timestamp_SU.batch')
     file_to_save=tkFileDialog.asksaveasfilename(title="Choose target filename") 
@@ -234,7 +234,7 @@ def test_e_i_synpses_combined_variant8_hollowed_gaussian(Fs=30000,min_spike_numb
     presynaptic id, postsynaptic id, stp, anatomical location of pre and post, tested pairs, connected pairs
     
     '''
-    target_dir='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/output'
+    target_dir='/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/output'
     os.chdir(target_dir)
     cells_batch=op.open_helper('all_shanks_timestamp_SU.batch')
     
@@ -528,7 +528,7 @@ def load_dict_ei_connetion(Fs=30000,savedataframe=True,plotSeparate=False):
 
 def spike_oscillation_coupling_single_batch_starter(low=4,high=12,Fs=30000,thr=1.5,restrict_to=False):
     
-    target_dir='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin'
+    target_dir='/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin'
     os.chdir(target_dir)
     os.chdir('output/ms3--all_shank2')
     su_batch=op.open_helper('all_timestamp_test.batch') 
@@ -671,10 +671,10 @@ def rayleigh_test(angles):
 
 def unit_place_corr_batch_plot_memory_efficient(thres=3,thr_artifact=3,thr_pos_intertrial=40,Fs=30000,high=2,binsize=5,iterations=1000,Tlength=400,bins=30,vmin=-1,bins_loc=25,step=1,tdur=3,tstart=5,binspers=5,t1=1,t2=2,thres_immo=0.5,thres_loc=2,plotData=True,plotrewpos=True,saveData=False,vmaxauto=True,vmaxValue=N.nan,step100ms=True,set_acc_max=True,acc_max=10):
     
-    directory2='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/output/ms3--all_shank2'
+    directory2='/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/output/ms3--all_shank2'
     os.chdir(directory2)
     su_batch=op.open_helper('all_timestamp_test_SOMI.batch') 
-    directory='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/#386_2020-07-21_16-05-13_test'
+    directory='/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/#386_2020-07-21_16-05-13_test'
     
     os.chdir(directory)
     posnew = N.load('estimate speed from position_corrected posnew.npy')
@@ -1810,7 +1810,7 @@ def compare_pre_post_transition_itol_locotoimmo(run_onset=True,binspers=5,tpre=3
     mean firing rate at on/offset phases of all OFF- & ON-SOMIs
     '''
     
-    target_dir="/source_data_and_codes/data/Fig3"
+    target_dir="/data/Fig3"
     os.chdir(target_dir)
     fig_to_save=tkFileDialog.asksaveasfilename(title="Choose target figname") 
     
@@ -1848,7 +1848,7 @@ def compare_pre_post_transition_itol_locotoimmo(run_onset=True,binspers=5,tpre=3
 #### detect reward position, reward onset, lick indices
 def detect_rewardzone_pos_split_trials(thres=3,Fs=30000,Tlength=400,thr_artifact=3,thr_pos_intertrial=40,plotData=True):
     
-    target_dir='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin'
+    target_dir='/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin'
     os.chdir(target_dir)
     directory='#386_2020-07-21_16-05-13_test'
     os.chdir(directory)
@@ -1990,8 +1990,8 @@ def extract_lick_pulses_for_bootstrap(ADC,thres=3,Fs=30000):
 ### detect ORI indices in NOV (shifted reward sites)
 def extract_ind_original_reward_pos(Fs=30000):
     
-    directory = '/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_15-56-34_trainshift'
-    directory2 = '/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_14-57-40_VRtest1'
+    directory = '/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_15-56-34_trainshift'
+    directory2 = '/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_14-57-40_VRtest1'
     
     os.chdir(directory)
     posnew = N.load('estimate speed from position_corrected posnew.npy')
@@ -2016,8 +2016,8 @@ def extract_ind_original_reward_pos(Fs=30000):
 
 def extract_ind_original_rewardzone_start_end(Fs=30000):
     
-    directory = '/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_15-56-34_trainshift'
-    directory2 = '/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_14-57-40_VRtest1'
+    directory = '/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_15-56-34_trainshift'
+    directory2 = '/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_14-57-40_VRtest1'
     
     os.chdir(directory)
     posnew = N.load('estimate speed from position_corrected posnew.npy')
@@ -2064,14 +2064,14 @@ def reward_rewardzone_firrate_prerepost_batch(thres=3,Fs=30000,iterations=1000,y
     
     if shift==False and originshift==False:
         ### for FAM
-        directory='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/#386_2020-07-21_16-05-13_test'
-        directory2='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/output/ms3--all_shank2'
+        directory='/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/#386_2020-07-21_16-05-13_test'
+        directory2='/data/example_raw_for_position_extraction_spike_waveform/200721_#386_lin/output/ms3--all_shank2'
         os.chdir(directory2)
         su_batch=op.open_helper('all_timestamp_test_SOMI.batch')
     elif shift==True or originshift==True:
         ### for NOV (new reward sites in translocated environment) or ORI
-        directory = '/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_15-56-34_trainshift'
-        directory2 = '/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/output/ms3--all_shank2'
+        directory = '/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/#328_2020-04-02_15-56-34_trainshift'
+        directory2 = '/data/example_raw_for_position_extraction_spike_waveform/200402_#328_lin/output/ms3--all_shank2'
         os.chdir(directory2)
         su_batch=op.open_helper('all_timestamp_trainshift.batch')
 
@@ -2642,7 +2642,7 @@ def extract_reward_pulse_for_batch (su,posnew,files,fname,fig_to_save,reward_sta
 #%% Sensory stimulation analyses for SOMIs   
 def Sen_stimuli_ind(thres=3):
     
-    target_dir='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200404_#327_lin/#327_2020-04-04_14-20-50_senstim'
+    target_dir='/data/example_raw_for_position_extraction_spike_waveform/200404_#327_lin/#327_2020-04-04_14-20-50_senstim'
     os.chdir(target_dir)
     reward=op.open_helper('100_ADC3.continuous')
     lick=op.open_helper('100_ADC2.continuous') 
@@ -2683,10 +2683,10 @@ def Sen_stimuli_ind(thres=3):
 
 def extract_senstim_pulses_batch(thres=3,Fs=30000,tprepost=3,binspers=10,plotData=True,plotSpeed=False,saveData=True):
     
-    directory='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200404_#327_lin/output/ms3--all_shank3'
+    directory='/data/example_raw_for_position_extraction_spike_waveform/200404_#327_lin/output/ms3--all_shank3'
     os.chdir(directory)
     su_batch=op.open_helper('all_timestamp_senstim.batch') 
-    directory3='/source_data_and_codes/data/example_raw_for_position_extraction_spike_waveform/200404_#327_lin/#327_2020-04-04_14-20-50_senstim'
+    directory3='/data/example_raw_for_position_extraction_spike_waveform/200404_#327_lin/#327_2020-04-04_14-20-50_senstim'
     os.chdir(directory3)
     posnew = op.open_helper('100_ADC1.continuous')
     reward=op.open_helper('100_ADC3.continuous')
@@ -2764,7 +2764,7 @@ def extract_senstim_pulses_batch(thres=3,Fs=30000,tprepost=3,binspers=10,plotDat
     
 def SOMI_reward_response_delay(smooth=True,zscore=True):
     ## result is the concatenated matrix of all SOMIs of E/NE
-    target_dir='/source_data_and_codes/data/Fig2'
+    target_dir='/data/Fig2'
     os.chdir(target_dir)
     result=op.open_helper('H_all_ordered_noysmooth_Summary.npy')
     if smooth==True:

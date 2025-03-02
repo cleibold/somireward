@@ -40,9 +40,9 @@ def extract_laser_pulses (laser250ms=True,thres=2,Fs=30000,plotData=True):
 
     # Directories of the data and target.
     if laser250ms==True:
-        target_dir="/source_data_and_codes/data/example_raster_plot_optoID/191212_#235_lin/#235_lin_2019-12-12_15-36-11_laser1"
+        target_dir="/data/example_raster_plot_optoID/191212_#235_lin/#235_lin_2019-12-12_15-36-11_laser1"
     else:
-        target_dir="/source_data_and_codes/data/example_raster_plot_optoID/191212_#235_lin/#235_lin_2019-12-12_15-27-40_laser"
+        target_dir="/data/example_raster_plot_optoID/191212_#235_lin/#235_lin_2019-12-12_15-27-40_laser"
     
     os.chdir(target_dir)
     
@@ -160,7 +160,7 @@ def scatter_plot_3D(condition,density=True,hist_inh=True,symlog=False,inh=True,S
         Outputs:
         spike kinetic scatter plot with histogramm of individual unit types
     '''
-    target_dir='/source_data_and_codes/data/spike_kinetic_scatter_plot'                
+    target_dir='/data/spike_kinetic_scatter_plot'                
     os.chdir(target_dir)
     
     if SOM==True:
@@ -713,7 +713,7 @@ def autocorrelogram(Fs=30000,maxlag=100,plotData=True,saveFig=False):
     Autocorrelation function
 
     '''
-    target_dir='/source_data_and_codes/data/example_raster_plot_optoID'                
+    target_dir='/data/example_raster_plot_optoID'                
     os.chdir(target_dir)
     indices=op.open_helper('SU_126.0_timestamps.txt')
     file_to_save=target_dir
