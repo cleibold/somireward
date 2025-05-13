@@ -1,2 +1,2 @@
 
-Code for Supplementary Figure 6
+Code and data for analysis in Supplementary Figure 6.
